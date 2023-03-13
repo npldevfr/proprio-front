@@ -9,10 +9,11 @@
     "story:dev": "histoire dev"
   },
   "devDependencies": {
-    "@histoire/plugin-nuxt": "0.14.2",
-    "@histoire/plugin-vue": "0.14.2",
-    "histoire": "0.14.2",
-    "nuxt": "3.0.0",
+    "@histoire/plugin-nuxt": "^0.14.2",
+    "@histoire/plugin-vue": "^0.14.2",
+    "histoire": "^0.14.2",
+    "nuxt": "^3.2.3",
+    "nuxt-icon": "^0.3.2",
     "sass": "^1.59.2"
   }
 }

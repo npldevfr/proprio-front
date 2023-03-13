@@ -1,26 +1,26 @@
 <script setup lang="ts">
-const {size, status = "online"} = defineProps<{
+const props = defineProps<{
   size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   status: 'online' | 'offline' | 'away' | 'busy';
 }>();
 
 const indicatorClass = computed(() => {
   return {
-    'IndicatorSizeXs': size === 'xs',
-    'IndicatorSizeSm': size === 'sm',
-    'IndicatorSizeMd': size === 'md',
-    'IndicatorSizeLg': size === 'lg',
-    'IndicatorSizeXl': size === 'xl',
-    'IndicatorSize2xl': size === '2xl',
+    'IndicatorSizeXs': props.size === 'xs',
+    'IndicatorSizeSm': props.size === 'sm',
+    'IndicatorSizeMd': props.size === 'md',
+    'IndicatorSizeLg': props.size === 'lg',
+    'IndicatorSizeXl': props.size === 'xl',
+    'IndicatorSize2xl': props.size === '2xl',
   };
 });
 
 const indicatorStatus = computed(() => {
   return {
-    'IndicatorStatusOnline': status === 'online',
-    'IndicatorStatusOffline': status === 'offline',
-    'IndicatorStatusAway': status === 'away',
-    'IndicatorStatusBusy': status === 'busy',
+    'IndicatorStatusOnline': props.status === 'online',
+    'IndicatorStatusOffline': props.status === 'offline',
+    'IndicatorStatusAway': props.status === 'away',
+    'IndicatorStatusBusy': props.status === 'busy',
   };
 });
 
@@ -33,6 +33,7 @@ const indicatorStatus = computed(() => {
 <style lang="scss" scoped>
 .Indicator {
   position: absolute;
+  z-index: 10;
   right: 0;
   bottom: 0;
   background: #12B76A;

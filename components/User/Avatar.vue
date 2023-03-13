@@ -1,54 +1,66 @@
 <script lang="ts" setup>
-const {username, avatar_url, text, size = "md", placeholder} = defineProps<{
+import {Icon} from "@iconify/vue";
+
+const props = defineProps<{
   username: string;
   avatar_url?: string;
   size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   placeholder?: boolean;
   text?: boolean;
+  hover?: boolean;
+  editable?: boolean;
 }>();
 
 const avatarClass = computed(() => {
   return {
-    'AvatarSizeXs': size === 'xs',
-    'AvatarSizeSm': size === 'sm',
-    'AvatarSizeMd': size === 'md',
-    'AvatarSizeLg': size === 'lg',
-    'AvatarSizeXl': size === 'xl',
-    'AvatarSize2xl': size === '2xl',
+    'AvatarSizeXs': props.size === 'xs',
+    'AvatarSizeSm': props.size === 'sm',
+    'AvatarSizeMd': props.size === 'md',
+    'AvatarSizeLg': props.size === 'lg',
+    'AvatarSizeXl': props.size === 'xl',
+    'AvatarSize2xl': props.size === '2xl',
+    'AvatarHover': props.hover,
   };
 });
 
-const makeInitials = computed(() => {
-  if (!username) return '';
+const color = computed(() => useGenerateColor(props.username));
 
-  // Split the string into words and reduce it to one word
-  const initials = username.match(/\b\w/g) || [];
-  return ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
-});
+const isHoverAvatar = ref(false);
 
 
 </script>
 
 <template>
-  <div class="Avatar" :class="avatarClass">
-    {{ makeInitials }}
-    <img v-if="avatar_url && !text" :src="avatar_url" :alt="username" />
-    <slot />
+  <div class="Avatar" :class="[avatarClass]" :style="{ backgroundColor: color }" @mouseenter="isHoverAvatar = true"
+       @mouseleave="isHoverAvatar = false">
+    <Transition>
+      <div v-if="isHoverAvatar && editable" class="AvatarEditable">
+        <Icon icon="uil:pen"/>
+      </div>
+    </Transition>
+    <img v-if="avatar_url && !placeholder && !text" :src="avatar_url" :alt="username"/>
+    <div v-else-if="text" v-text="username[0]"/>
+    <Icon icon="uil:user" v-else-if="placeholder"/>
+    <slot/>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .Avatar {
-  background: #F9F5FF;
   border-radius: 200px;
   font-weight: 500;
   line-height: 28px;
-  color: #6E7191;
+  word-break: keep-all;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  font-size: 1rem;
+  text-transform: uppercase;
+
+  &Hover {
+    cursor: pointer;
+  }
 
   img {
     position: absolute;
@@ -62,35 +74,54 @@ const makeInitials = computed(() => {
     outline: none;
   }
 
+  &Editable {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+  }
+
   &Size {
     &Xs {
       width: 24px;
       height: 24px;
+      font-size: 12px;
     }
 
     &Sm {
       width: 32px;
       height: 32px;
+      font-size: 14px;
     }
 
     &Md {
       width: 40px;
       height: 40px;
+      font-size: 16px;
     }
 
     &Lg {
       width: 48px;
       height: 48px;
+      font-size: 18px;
     }
 
     &Xl {
       width: 56px;
       height: 56px;
+      font-size: 20px;
     }
 
     &2xl {
       width: 64px;
       height: 64px;
+      font-size: 22px;
     }
 
   }
