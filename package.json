@@ -6,6 +6,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "test": "vitest",
     "story:dev": "histoire dev"
   },
   "devDependencies": {
@@ -14,6 +15,7 @@
     "histoire": "^0.14.2",
     "nuxt": "^3.2.3",
     "nuxt-icon": "^0.3.2",
+    "nuxt-vitest": "^0.6.8",
     "sass": "^1.59.2"
   }
 }
