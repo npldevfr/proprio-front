@@ -4,6 +4,7 @@ export default defineNuxtConfig({
 
     // @ts-ignore
     css: [
-        '~/assets/scss/reset.scss'
+        '~/assets/scss/reset.scss',
+        '~/assets/scss/root.scss',
     ],
 })
