@@ -11,7 +11,7 @@ const state = reactive({
 </script>
 
 <template>
-  <Story title="User/Avatar">
+  <Story title="User/Avatar" icon="material-symbols:person-3-rounded" :layout="{type: 'grid', width: 200}">
 
     <template #controls>
       <HstSelect v-model="state.size" title="Size" :options="['xs', 'sm', 'md', 'lg', 'xl', '2xl']"/>
