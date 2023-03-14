@@ -79,6 +79,7 @@ const buttonClass = computed(() => {
 
 .Button {
   box-sizing: border-box;
+  transition: background-color, color 0.2s ease-in-out;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -160,20 +161,66 @@ const buttonClass = computed(() => {
   &Hierarchy {
 
     &Primary {
-      background: #7F56D9;
-      border: 1px solid #7F56D9;
-      color: #FFFFFF;
+      background: var(--primary);
+      border: 1px solid var(--primary);;
+      color: var(--primary-color);
+
+      &:hover {
+        background: var(--primary-hover);
+        border: 1px solid var(--primary-hover);
+      }
+
+      &:active {
+        background: var(--primary-hover);
+        border: 1px solid var(--primary-hover);
+      }
+
+      &:focus {
+        background: var(--primary-hover);
+        border: 1px solid var(--primary-hover);
+      }
     }
 
     &SecondaryColor {
       background: #F9F5FF;
       border: 1px solid #F9F5FF;
-      color: #7F56D9;
+      color: var(--primary);
+
+      &:hover {
+        background: #EDE6FF;
+        border: 1px solid #EDE6FF;
+      }
+
+      &:active {
+        background: #E0D7FF;
+        border: 1px solid #E0D7FF;
+      }
+
+      &:focus {
+        background: #EDE6FF;
+        border: 1px solid #EDE6FF;
+      }
 
       .ButtonDestructive {
         background: #FEF3F2;
         border: 1px solid #FEF3F2;
         color: #B42318;
+
+        &:hover {
+          background: #FDE8E6;
+          border: 1px solid #FDE8E6;
+        }
+
+        &:active {
+          background: #FCDAD9;
+          border: 1px solid #FCDAD9;
+        }
+
+        &:focus {
+          background: #FDE8E6;
+          border: 1px solid #FDE8E6;
+        }
+
       }
     }
 
@@ -181,12 +228,27 @@ const buttonClass = computed(() => {
       background: #FFFFFF;
       color: #344054;
       border: 1px solid #D0D5DD;
+
+      &:hover {
+        background: #F9FAFC;
+        border: 1px solid #D0D5DD;
+      }
+
+      &:active {
+        background: #F3F4F6;
+        border: 1px solid #D0D5DD;
+      }
+
+      &:focus {
+        background: #F9FAFC;
+        border: 1px solid #D0D5DD;
+      }
     }
 
     &TertiaryColor {
       background: transparent;
       border: 1px solid transparent;
-      color: #7F56D9;
+      color: var(--primary);
     }
 
     &TertiaryGray {
@@ -200,7 +262,7 @@ const buttonClass = computed(() => {
       height: auto;
       background: transparent;
       border: 1px solid transparent;
-      color: #7F56D9;
+      color: var(--primary);
     }
 
     &LinkGray {
@@ -216,6 +278,12 @@ const buttonClass = computed(() => {
     background: #B42318;
     border: 1px solid #B42318;
     color: #FFFFFF;
+
+    &:hover {
+      background: #9D1E16;
+      color: #FFFFFF;
+      border: 1px solid #9D1E16;
+    }
   }
 }
 
