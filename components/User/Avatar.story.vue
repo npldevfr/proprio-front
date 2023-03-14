@@ -2,7 +2,7 @@
 const state = reactive({
   size: 'md',
   text: false,
-  avatar_url: 'https://pbs.twimg.com/profile_images/1567895544365826049/_-C1KzoR_400x400.jpg',
+  avatar_url: 'https://images.unsplash.com/photo-1677519398334-809b9c38e07d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
   username: 'Guillet Nathan',
   status: 'online',
   placeholder: false,
