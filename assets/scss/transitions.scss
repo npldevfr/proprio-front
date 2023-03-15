@@ -11,3 +11,26 @@
 .v-leave-to {
   opacity: 0;
 }
+
+/**
+ Toast transition
+    (slide in/out)
+ */
+.toast-notification-enter-active {
+  animation: toast-fade-in 0.23s ease-in-out;
+}
+
+.toast-notification-leave-active {
+  animation: toast-fade-in 0.23s ease-in-out reverse;
+}
+
+@keyframes toast-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -18,5 +18,8 @@
     "nuxt-icon": "^0.3.2",
     "nuxt-vitest": "^0.6.8",
     "sass": "^1.59.2"
+  },
+  "dependencies": {
+    "vue3-toastify": "^0.1.5"
   }
 }

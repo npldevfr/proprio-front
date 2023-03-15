@@ -8,6 +8,10 @@ specifiers:
   nuxt-icon: ^0.3.2
   nuxt-vitest: ^0.6.8
   sass: ^1.59.2
+  vue3-toastify: ^0.1.5
+
+dependencies:
+  vue3-toastify: 0.1.5
 
 devDependencies:
   '@histoire/plugin-nuxt': 0.14.2_fr34e7ehz2qv5fnxtwnhcfjzmq
@@ -2613,6 +2617,8 @@ packages:
       finalhandler: 1.1.2
       parseurl: 1.3.3
       utils-merge: 1.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /consola/2.15.3:
@@ -2825,6 +2831,11 @@ packages:
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.0.0
     dev: true
@@ -3327,6 +3338,8 @@ packages:
       parseurl: 1.3.3
       statuses: 1.5.0
       unpipe: 1.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /flat/5.0.2:
@@ -5706,6 +5719,8 @@ packages:
       on-finished: 2.4.1
       range-parser: 1.2.1
       statuses: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /sentence-case/3.0.4:
@@ -5736,6 +5751,8 @@ packages:
       escape-html: 1.0.3
       parseurl: 1.3.3
       send: 0.18.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /set-blocking/2.0.0:
@@ -6675,6 +6692,16 @@ packages:
       '@vue/server-renderer': 3.2.47_vue@3.2.47
       '@vue/shared': 3.2.47
     dev: true
+
+  /vue3-toastify/0.1.5:
+    resolution: {integrity: sha512-ppdDL+rtKCNh1+m669/tNd/DVrgSRm+BRzwW+Ji+jyZ60RYWjUO2ATtqilMjct2sD2SJB8djZKkHCscQleW45Q==}
+    engines: {node: '>=16', npm: '>=7'}
+    peerDependencies:
+      vue: ^3.2.0
+    peerDependenciesMeta:
+      vue:
+        optional: true
+    dev: false
 
   /w3c-keyname/2.2.6:
     resolution: {integrity: sha512-f+fciywl1SJEniZHD6H+kUO8gOnwIr7f4ijKA6+ZvJFjeGi1r4PDLl53Ayud9O/rk64RqgoQine0feoeOU0kXg==}

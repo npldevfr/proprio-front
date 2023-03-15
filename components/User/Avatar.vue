@@ -24,7 +24,6 @@ const avatarClass = computed(() => {
 });
 
 const color = computed(() => useGenerateColor(props.username));
-
 const isHoverAvatar = ref(false);
 
 

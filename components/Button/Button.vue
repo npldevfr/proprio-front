@@ -76,6 +76,18 @@ const buttonClass = computed(() => {
   border: 1px solid #FEF3F2;
 }
 
+.ButtonDestructive.ButtonHierarchyPrimary {
+  &:hover {
+    background: #B42318;
+    color: #FFFFFF;
+  }
+
+  &:active {
+    background: #B42318;
+    color: #FFFFFF;
+  }
+}
+
 
 .Button {
   box-sizing: border-box;
@@ -164,11 +176,6 @@ const buttonClass = computed(() => {
       background: var(--primary);
       border: 1px solid var(--primary);;
       color: var(--primary-color);
-
-      &:hover {
-        background: var(--primary-hover);
-        border: 1px solid var(--primary-hover);
-      }
 
       &:active {
         background: var(--primary-hover);
@@ -284,6 +291,7 @@ const buttonClass = computed(() => {
       color: #FFFFFF;
       border: 1px solid #9D1E16;
     }
+
   }
 }
 
