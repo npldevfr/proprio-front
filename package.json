@@ -9,6 +9,8 @@
     "postinstall": "nuxt prepare",
     "test": "vitest",
     "story:dev": "histoire dev"
+    "story:build": "histoire build",
+    "story:preview": "histoire preview"
   },
   "devDependencies": {
     "@histoire/plugin-nuxt": "^0.14.2",
